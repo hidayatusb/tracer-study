@@ -51,6 +51,18 @@
             <span class="mx-3">Tracer Alumni</span>
         </a>
 
+        <a href="/statistika" class="flex {{ $title == 'Statistika' ? 'active' : 'hover:bg-active hover:bg-opacity-40' }} items-center p-4 rounded-lg mt-2 text-white  hover:text-gray-100 transition ease-in-out duration-500">
+            <img src="/images/icons/tracer.svg" class="w-6 h-6">
+
+            <span class="mx-3">Statistika</span>
+        </a>
+
+        <a href="/hasil-statistika" class="flex {{ $title == 'Hasil Statistika' ? 'active' : 'hover:bg-active hover:bg-opacity-40' }} items-center p-4 rounded-lg mt-2 text-white  hover:text-gray-100 transition ease-in-out duration-500">
+            <img src="/images/icons/tracer.svg" class="w-6 h-6">
+
+            <span class="mx-3">Hasil Statistika</span>
+        </a>
+
         <a href="/data-tracer" class="flex {{ $title == 'Pengguna Lulusan' ? 'active' : 'hover:bg-active hover:bg-opacity-40' }} items-center p-4 rounded-lg mt-2 text-white  hover:text-gray-100 transition ease-in-out duration-500">
             <img src="/images/icons/tracer.svg" class="w-6 h-6">
 

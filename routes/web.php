@@ -8,6 +8,8 @@ use App\Http\Controllers\KuesionerController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\TraceradminController;
 use App\Http\Controllers\PenggunalulusanController;
+use App\Http\Controllers\HasilStatistikaController;
+use App\Http\Controllers\StatistikaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,10 @@ use App\Http\Controllers\PenggunalulusanController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contoh-kuesioner', function () {
+    return view('kuesioner.contoh');
+})->name('kuesioner.contoh');
 
 
 Route::get('/dashboard2', function () {
@@ -62,6 +68,13 @@ Route::delete('kuesioner/{kuesioner}', [KuesionerController::class, 'destroy'])-
 Route::get('data-alumni', [AlumniController::class, 'index'])->middleware(['auth', 'checkRole:admin']);
 Route::get('data-alumni/lihat/{id}', [AlumniController::class, 'show'])->middleware(['auth', 'checkRole:admin']);
 Route::delete('data-alumni/hapus/{user}', [AlumniController::class, 'destroy'])->name('data-alumni.destroy')->middleware(['auth', 'checkRole:admin']);
+
+Route::get('statistika', [StatistikaController::class, 'index'])->name('statistika');
+Route::post('statistika', [StatistikaController::class, 'store'])->name('statistika.store');
+
+Route::get('hasil-statistika', [HasilStatistikaController::class, 'index'])->name('hasil-statistika');
+Route::get('hasil-statistika/excel', [HasilStatistikaController::class, 'excel'])->name('hasil-statistika.excel');
+Route::get('hasil-statistika/pdf', [HasilStatistikaController::class, 'pdf'])->name('hasil-statistika.pdf');
 
 // Data Tracer Admin Route
 Route::get('data-tracer', [TraceradminController::class, 'index'])->middleware(['auth', 'checkRole:admin']);
